@@ -1,0 +1,11 @@
+# font
+    default font size : 24px
+    font family : 'Segoe UI'
+
+# colors
+    primary color : #FBB03B
+    secondary color : #F7931E
+    default black : #080708
+    default white : #F0EFF4
+    accent : #CC2936
+    
