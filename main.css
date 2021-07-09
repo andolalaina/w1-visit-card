@@ -43,6 +43,7 @@ body {
 }
 
 .card-back, .card-front {
+    position: absolute;
     width: 100%;
     height: 100%;
     max-width: 920px;
@@ -53,13 +54,11 @@ body {
 }
 
 .card-back {
-    position: absolute;
     background: radial-gradient(circle, #2a2a2a 0%, #000000 100%);
     transform: rotateY(180deg);
 }
 
 .card-front {
-    position: absolute;
     background: radial-gradient(circle, #ffffff 0%, var(--default-white) 100%);
     display: flex;
     flex-flow: column;
@@ -71,12 +70,7 @@ body {
     margin: 0 2.5rem;
 }
 
-.card-content {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-.card-header>.name, .card-header>.name>.em {
+.card-header>.name {
     font-size: 44px;
 }
 
@@ -87,6 +81,8 @@ body {
 .card-content {
     display: flex;
     justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .credential {
@@ -118,4 +114,27 @@ body {
     width: 100%;
     height: 100%;
     background: url("assets/logo_white.png") no-repeat center;
+}
+
+.tip {
+    position: absolute;
+    padding: 2rem;
+    background: radial-gradient(#2a2a2a, var(--default-black));
+    color: var(--default-white);
+    border-radius: 10px;
+    top: 0%;
+    left: 50%;
+    z-index: 999;
+    transform: translate(-50%, -100%);
+}
+
+@keyframes showTip {
+    0% {transform: translate(-50%, -100%);}
+    25% {transform: translate(-50%, 0%);}
+    75% {transform: translate(-50%, 0%);}
+    100% {transform: translate(-50%, -100%);}
+}
+
+.tip.show {
+    animation: showTip 3.5s ease;
 }
